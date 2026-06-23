@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Administrativo Coremma LTDA</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        header p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #003366;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .service-card {
+            background: #e6f0fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #003366;
+            font-weight: bold;
+        }
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .info-table td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .info-table td:first-child {
+            font-weight: bold;
+            color: #555;
+            width: 30%;
+        }
+        .contact-list, .address-box {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-list li {
+            margin-bottom: 10px;
+        }
+        .contact-list a {
+            color: #003366;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-list a:hover {
+            text-decoration: underline;
+        }
+        .address-box {
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Centro Administrativo Coremma LTDA</h1>
+        <p>CNPJ: 83.109.504/0001-71</p>
+    </header>
+
+    <div class="container">
+
+        <section id="servicos">
+            <h2>Principais Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">Gestão Administrativa</div>
+                <div class="service-card">Consultoria Comercial</div>
+                <div class="service-card">Logística e Distribuição</div>
+                <div class="service-card">Apoio Operacional</div>
+            </div>
+        </section>
+
+        <section id="registro">
+            <h2>Informações de Registro</h2>
+            <table class="info-table">
+                <tr><td>Razão Social</td><td>Coremma LTDA</td></tr>
+                <tr><td>Nome Fantasia</td><td>Centro Administrativo</td></tr>
+                <tr><td>CNPJ</td><td>83.109.504/0001-71 (83109504000171)</td></tr>
+                <tr><td>Data da Abertura</td><td>13/05/1975 (51 anos, 1 mês e 10 dias)</td></tr>
+                <tr><td>Situação</td><td><span style="color: green; font-weight: bold;">Ativa</span> (desde 08/11/2003)</td></tr>
+                <tr><td>Tipo</td><td>Matriz</td></tr>
+                <tr><td>Natureza Jurídica</td><td>Sociedade Empresária Limitada</td></tr>
+                <tr><td>Capital Social</td><td>R$ 60.000.000,00</td></tr>
+                <tr><td>Porte</td><td>Sem Enquadramento</td></tr>
+                <tr><td>Opção pelo Simples</td><td>Não</td></tr>
+                <tr><td>Opção pelo MEI</td><td>Não</td></tr>
+            </table>
+
+            <h3 style="color: #444; margin-top: 20px;">Inscrições Estaduais</h3>
+            <table class="info-table">
+                <tr><td>Minas Gerais (MG)</td><td>004528004.00-10</td></tr>
+                <tr><td>Pernambuco (PE)</td><td>1135571-91</td></tr>
+                <tr><td>Paraná (PR)</td><td>09911185-27</td></tr>
+                <tr><td>Rio Grande do Sul (RS)</td><td>900/0070134</td></tr>
+                <tr><td>São Paulo (SP)</td><td>824.022.571.117</td></tr>
+            </table>
+        </section>
+
+        <section id="contatos">
+            <h2>Contatos</h2>
+            <ul class="contact-list">
+                <li><strong>E-mail:</strong> <a href="mailto:contabil@coremma.com.br">contabil@coremma.com.br</a></li>
+                <li><strong>Telefone:</strong> <a href="tel:4722047424">(47) 2204-7424</a></li>
+            </ul>
+        </section>
+
+        <section id="localizacao">
+            <h2>Localização</h2>
+            <table class="info-table" style="margin-bottom: 20px;">
+                <tr><td>Logradouro</td><td>Rodovia Br 470, 6000</td></tr>
+                <tr><td>Bairro</td><td>Fortaleza</td></tr>
+                <tr><td>Município / UF</td><td>Blumenau - SC</td></tr>
+                <tr><td>CEP</td><td>89056-600</td></tr>
+            </table>
+
+            <h3>Endereço para Correspondência</h3>
+            <div class="address-box">
+                <p style="margin: 0; line-height: 1.8;">
+                    <strong>Centro Administrativo Coremma LTDA</strong><br>
+                    Rodovia Br 470 6000<br>
+                    Fortaleza<br>
+                    Blumenau SC<br>
+                    89056-600
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Coremma LTDA. Todos os direitos reservados.
+    </footer>
+
+</body>
+</html>
