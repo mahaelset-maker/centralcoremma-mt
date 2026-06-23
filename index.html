@@ -3,183 +3,522 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro Administrativo Coremma LTDA</title>
+    <title>Coremma LTDA | Centro Administrativo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+        /* --- Reset e Estilos Globais --- */
+        :root {
+            --primary: #0a2540; /* Azul Escuro Sofisticado */
+            --secondary: #007bff; /* Azul Elétrico Moderno */
+            --accent: #635bff; /* Roxo suave para contraste */
+            --background: #f4f7fa; /* Cinza muito claro */
+            --text-dark: #1a1f36;
+            --text-light: #fff;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
-            color: #333;
         }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+
+        /* --- Header / Navegação --- */
         header {
-            background-color: #003366;
+            background-color: #fff;
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--secondary);
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
             color: white;
-            padding: 20px 0;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+        }
+
+        .cta-button:hover {
+            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+            transform: translateY(-1px);
+        }
+
+        /* --- Seção Hero / Principal --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(10, 37, 64, 0.95), rgba(99, 91, 255, 0.8)), 
+                        url('https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            padding: 0 5%;
+            position: relative;
         }
-        header h1 {
-            margin: 0;
-            font-size: 24px;
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10vh;
+            background: linear-gradient(to top, var(--background), transparent);
         }
-        header p {
-            margin: 5px 0 0 0;
-            font-size: 14px;
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
             opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
         }
+
+        .hero .cnpj {
+            font-size: 0.9rem;
+            margin-top: 10px;
+            opacity: 0.7;
+        }
+
+        /* --- Layout de Grid e Container Global --- */
         .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            position: relative;
+            z-index: 10;
         }
-        section {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+        /* --- Estilo de Cards Modernos --- */
+        .card {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(0,0,0,0.03);
+            position: relative;
         }
-        h2 {
-            color: #003366;
-            border-bottom: 2px solid #003366;
-            padding-bottom: 8px;
-            margin-top: 0;
+
+        /* --- Seção de Serviços --- */
+        #servicos {
+            grid-column: 1 / -1;
+            margin-bottom: 3rem;
+            background: none;
+            padding: 0;
+            box-shadow: none;
         }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-tag {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
+
         .service-card {
-            background: #e6f0fa;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 4px solid #003366;
-            font-weight: bold;
-        }
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        .info-table td {
-            padding: 10px;
-            border-bottom: 1px solid #eee;
-        }
-        .info-table td:first-child {
-            font-weight: bold;
-            color: #555;
-            width: 30%;
-        }
-        .contact-list, .address-box {
-            list-style: none;
-            padding: 0;
-        }
-        .contact-list li {
-            margin-bottom: 10px;
-        }
-        .contact-list a {
-            color: #003366;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .contact-list a:hover {
-            text-decoration: underline;
-        }
-        .address-box {
-            background: #f9f9f9;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-        }
-        footer {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
             text-align: center;
-            padding: 20px;
-            font-size: 12px;
-            color: #777;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            background-color: #e6f0fa;
+            padding: 15px;
+            border-radius: 50%;
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* --- Informações de Registro --- */
+        #registro h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #registro h2::before {
+            content: '';
+            width: 5px;
+            height: 30px;
+            background-color: var(--secondary);
+            border-radius: 5px;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .info-item {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .info-key {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-value {
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .status-badge {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        /* --- Contatos e Localização (Sidebar) --- */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-card {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .contact-method, .location-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon, .location-icon {
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+
+        .location-box {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* --- Mapa de Fundo Falso (Moderno) --- */
+        #map-container {
+            grid-column: 1 / -1;
+            height: 300px;
+            background: #ddd url('https://snazzymaps.com/explore.static?mapId=21&apikey=AIzaSy...your_api_key&width=1200&height=300&scale=2&zoom=15&center=-26.9167,-49.0667') no-repeat center center/cover;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 4rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* --- Animações e Responsividade --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 992px) {
+            .container { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3rem; }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            header { flex-direction: column; gap: 10px; }
+            nav ul { gap: 1rem; }
+            .info-item { grid-template-columns: 1fr; gap: 5px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Centro Administrativo Coremma LTDA</h1>
-        <p>CNPJ: 83.109.504/0001-71</p>
+        <div class="logo">
+            <span class="material-symbols-outlined logo-icon">corporate_fare</span>
+            Coremma LTDA
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#registro">Registro</a></li>
+                <li><a href="#contatos">Contatos</a></li>
+                <li><a href="#localizacao">Localização</a></li>
+            </ul>
+        </nav>
+        <a href="#contatos" class="cta-button">Falar Conosco</a>
     </header>
+
+    <div class="hero">
+        <span class="section-tag" style="color: rgba(255,255,255,0.7)">Inovação Administrativa</span>
+        <h1>Eficiência Estratégica para o Futuro</h1>
+        <p>Centro Administrativo Coremma: centralizando inteligência e suporte operacional para garantir o crescimento sustentável de todos os parceiros.</p>
+        <span class="cnpj">CNPJ: 83.109.504/0001-71</span>
+    </div>
 
     <div class="container">
 
         <section id="servicos">
-            <h2>Principais Serviços</h2>
+            <div class="services-header">
+                <span class="section-tag">O que fazemos</span>
+                <h2 class="section-title">Soluções Corporativas Integradas</h2>
+            </div>
             <div class="services-grid">
-                <div class="service-card">Gestão Administrativa</div>
-                <div class="service-card">Consultoria Comercial</div>
-                <div class="service-card">Logística e Distribuição</div>
-                <div class="service-card">Apoio Operacional</div>
+                <div class="service-card">
+                    <span class="material-symbols-outlined service-icon">account_balance</span>
+                    <h3>Gestão Administrativa</h3>
+                </div>
+                <div class="service-card">
+                    <span class="material-symbols-outlined service-icon">handshake</span>
+                    <h3>Consultoria Comercial</h3>
+                </div>
+                <div class="service-card">
+                    <span class="material-symbols-outlined service-icon">local_shipping</span>
+                    <h3>Logística e Distribuição</h3>
+                </div>
+                <div class="service-card">
+                    <span class="material-symbols-outlined service-icon">verified_user</span>
+                    <h3>Apoio Operacional</h3>
+                </div>
             </div>
         </section>
 
-        <section id="registro">
-            <h2>Informações de Registro</h2>
-            <table class="info-table">
-                <tr><td>Razão Social</td><td>Coremma LTDA</td></tr>
-                <tr><td>Nome Fantasia</td><td>Centro Administrativo</td></tr>
-                <tr><td>CNPJ</td><td>83.109.504/0001-71 (83109504000171)</td></tr>
-                <tr><td>Data da Abertura</td><td>13/05/1975 (51 anos, 1 mês e 10 dias)</td></tr>
-                <tr><td>Situação</td><td><span style="color: green; font-weight: bold;">Ativa</span> (desde 08/11/2003)</td></tr>
-                <tr><td>Tipo</td><td>Matriz</td></tr>
-                <tr><td>Natureza Jurídica</td><td>Sociedade Empresária Limitada</td></tr>
-                <tr><td>Capital Social</td><td>R$ 60.000.000,00</td></tr>
-                <tr><td>Porte</td><td>Sem Enquadramento</td></tr>
-                <tr><td>Opção pelo Simples</td><td>Não</td></tr>
-                <tr><td>Opção pelo MEI</td><td>Não</td></tr>
-            </table>
-
-            <h3 style="color: #444; margin-top: 20px;">Inscrições Estaduais</h3>
-            <table class="info-table">
-                <tr><td>Minas Gerais (MG)</td><td>004528004.00-10</td></tr>
-                <tr><td>Pernambuco (PE)</td><td>1135571-91</td></tr>
-                <tr><td>Paraná (PR)</td><td>09911185-27</td></tr>
-                <tr><td>Rio Grande do Sul (RS)</td><td>900/0070134</td></tr>
-                <tr><td>São Paulo (SP)</td><td>824.022.571.117</td></tr>
-            </table>
-        </section>
-
-        <section id="contatos">
-            <h2>Contatos</h2>
-            <ul class="contact-list">
-                <li><strong>E-mail:</strong> <a href="mailto:contabil@coremma.com.br">contabil@coremma.com.br</a></li>
-                <li><strong>Telefone:</strong> <a href="tel:4722047424">(47) 2204-7424</a></li>
-            </ul>
-        </section>
-
-        <section id="localizacao">
-            <h2>Localização</h2>
-            <table class="info-table" style="margin-bottom: 20px;">
-                <tr><td>Logradouro</td><td>Rodovia Br 470, 6000</td></tr>
-                <tr><td>Bairro</td><td>Fortaleza</td></tr>
-                <tr><td>Município / UF</td><td>Blumenau - SC</td></tr>
-                <tr><td>CEP</td><td>89056-600</td></tr>
-            </table>
-
-            <h3>Endereço para Correspondência</h3>
-            <div class="address-box">
-                <p style="margin: 0; line-height: 1.8;">
-                    <strong>Centro Administrativo Coremma LTDA</strong><br>
-                    Rodovia Br 470 6000<br>
-                    Fortaleza<br>
-                    Blumenau SC<br>
-                    89056-600
-                </p>
+        <main class="card" id="registro">
+            <h2>
+                <span class="material-symbols-outlined" style="color: var(--secondary)">assured_workload</span>
+                Dados de Registro Corporativo
+            </h2>
+            <div class="info-list">
+                <div class="info-item"><span class="info-key">Razão Social</span><span class="info-value">Coremma LTDA</span></div>
+                <div class="info-item"><span class="info-key">Nome Fantasia</span><span class="info-value">Centro Administrativo</span></div>
+                <div class="info-item"><span class="info-key">Capital Social</span><span class="info-value">R$ 60.000.000,00</span></div>
+                <div class="info-item"><span class="info-key">Natureza Jurídica</span><span class="info-value">Sociedade Empresária Limitada</span></div>
+                <div class="info-item"><span class="info-key">Porte</span><span class="info-value">Sem Enquadramento</span></div>
+                <div class="info-item"><span class="info-key">Opção pelo Simples</span><span class="info-value">Não</span></div>
+                <div class="info-item"><span class="info-key">Opção pelo MEI</span><span class="info-value">Não</span></div>
+                <div class="info-item"><span class="info-key">Tipo</span><span class="info-value">Matriz</span></div>
+                <div class="info-item">
+                    <span class="info-key">Situação Cadastral</span>
+                    <span class="info-value"><span class="status-badge">ATIVA</span> (Desde 08/11/2003)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-key">Data de Abertura</span>
+                    <span class="info-value">13/05/1975 (<strong>51 anos</strong>, 1 mês, 10 dias)</span>
+                </div>
             </div>
-        </section>
+
+            <h3 style="color: #444; margin-top: 2rem; margin-bottom: 1rem; font-size: 1.2rem;">Inscrições Estaduais</h3>
+            <div class="info-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px;">
+                <div class="info-value" style="background:#f9f9f9; padding: 10px; border-radius:5px;"><strong>MG:</strong> 004528004.00-10</div>
+                <div class="info-value" style="background:#f9f9f9; padding: 10px; border-radius:5px;"><strong>PE:</strong> 1135571-91</div>
+                <div class="info-value" style="background:#f9f9f9; padding: 10px; border-radius:5px;"><strong>PR:</strong> 09911185-27</div>
+                <div class="info-value" style="background:#f9f9f9; padding: 10px; border-radius:5px;"><strong>RS:</strong> 900/0070134</div>
+                <div class="info-value" style="background:#f9f9f9; padding: 10px; border-radius:5px;"><strong>SP:</strong> 824.022.571.117</div>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <section class="sidebar-card" id="contatos">
+                <h2>
+                    <span class="material-symbols-outlined" style="color: var(--secondary)">contact_phone</span>
+                    Canais de Contato
+                </h2>
+                <div class="contact-method">
+                    <span class="material-symbols-outlined contact-icon">mail</span>
+                    <div>
+                        <strong>Enviar E-mail</strong><br>
+                        <a href="mailto:contabil@coremma.com.br" style="color: var(--secondary)">contabil@coremma.com.br</a>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <span class="material-symbols-outlined contact-icon">call</span>
+                    <div>
+                        <strong>Atendimento Telefônico</strong><br>
+                        <a href="tel:4722047424" style="color: var(--text-dark)">(47) 2204-7424</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="sidebar-card" id="localizacao">
+                <h2>
+                    <span class="material-symbols-outlined" style="color: var(--secondary)">location_on</span>
+                    Onde Estamos
+                </h2>
+                <div class="location-item">
+                    <span class="material-symbols-outlined location-icon">map</span>
+                    <div>
+                        <strong>Rodovia Br 470, 6000</strong><br>
+                        Fortaleza, Blumenau - SC<br>
+                        CEP: 89056-600
+                    </div>
+                </div>
+                
+                <h3 style="font-size: 1rem; color: #444; margin-top: 1rem;">Correspondência</h3>
+                <div class="location-box">
+                    <p style="margin: 0; font-size: 0.85rem;">
+                        <strong>Coremma LTDA - Centro Administrativo</strong><br>
+                        Rodovia Br 470, 6000 | Fortaleza<br>
+                        Blumenau, Santa Catarina<br>
+                        CEP: 89056-600
+                    </p>
+                </div>
+            </section>
+        </aside>
+
+        <div id="map-container">
+            </div>
 
     </div>
 
     <footer>
-        &copy; 2026 Coremma LTDA. Todos os direitos reservados.
+        <p>&copy; 2026 Coremma LTDA. Centro Administrativo e de Gestão de Negócios.</p>
+        <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 5px;">CNPJ: 83.109.504/0001-71</p>
     </footer>
 
 </body>
